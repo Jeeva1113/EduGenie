@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGenie – AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Google Gemini Powered</p>
+      <h1>EduGenie</h1>
+      <p>Learn faster with an AI study assistant.</p>
+    </div>
+    <span class="status" id="status">Checking API…</span>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button class="tab active" data-target="qa">Q&A</button>
+      <button class="tab" data-target="explain">Explain</button>
+      <button class="tab" data-target="quiz">Quiz</button>
+      <button class="tab" data-target="summary">Summarize</button>
+      <button class="tab" data-target="path">Learning Path</button>
+    </nav>
+
+    <section id="qa" class="panel active">
+      <h2>Ask a question</h2>
+      <textarea id="qaInput" placeholder="Example: What is machine learning?"></textarea>
+      <button class="primary" onclick="runQA()">Ask EduGenie</button>
+    </section>
+
+    <section id="explain" class="panel">
+      <h2>Explain a topic</h2>
+      <textarea id="explainInput" placeholder="Example: Neural networks"></textarea>
+      <button class="primary" onclick="runExplain()">Explain</button>
+    </section>
+
+    <section id="quiz" class="panel">
+      <h2>Create a 3-question quiz</h2>
+      <input id="quizInput" placeholder="Example: Python basics" />
+      <button class="primary" onclick="runQuiz()">Generate Quiz</button>
+      <div id="quizResult"></div>
+    </section>
+
+    <section id="summary" class="panel">
+      <h2>Summarize study material</h2>
+      <textarea id="summaryInput" placeholder="Paste at least 20 characters of study material here…"></textarea>
+      <button class="primary" onclick="runSummary()">Summarize</button>
+    </section>
+
+    <section id="path" class="panel">
+      <h2>Build a learning path</h2>
+      <input id="pathInput" placeholder="Example: Learn Python for data analysis" />
+      <button class="primary" onclick="runPath()">Build Path</button>
+      <div id="pathResult"></div>
+    </section>
+
+    <section class="result-card">
+      <h2>Result</h2>
+      <div id="result">Your AI response will appear here.</div>
+    </section>
+  </main>
+
+  <footer>EduGenie Capstone Project</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
